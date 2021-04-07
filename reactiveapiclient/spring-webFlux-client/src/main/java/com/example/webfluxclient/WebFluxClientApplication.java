@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class WebFluxClientApplication {
 
+    //注入userApi
     @Bean
     FactoryBean<IUserApi> userApi(ProxyCreator proxyCreator) {
         return new FactoryBean<IUserApi>() {
