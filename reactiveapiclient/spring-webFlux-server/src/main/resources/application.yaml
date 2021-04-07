@@ -1,0 +1,5 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://xtxdmd:1234@cluster0.f1nn3.mongodb.net/reactiveDemo?retryWrites=true&w=majority
+
