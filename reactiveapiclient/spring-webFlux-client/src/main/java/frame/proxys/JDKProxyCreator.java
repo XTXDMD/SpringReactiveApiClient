@@ -50,6 +50,12 @@ public class JDKProxyCreator implements ProxyCreator {
                 });
     }
 
+    /**
+     * 获取调用接口方法所需信息
+     * @param method
+     * @param args
+     * @return
+     */
     private MethodInfo extractMethodInfo(Method method, Object[] args) {
         MethodInfo methodInfo = new MethodInfo();
         //获取方法的url和请求类型
@@ -104,6 +110,12 @@ public class JDKProxyCreator implements ProxyCreator {
         }
     }
 
+    /**
+     * 获取请求uri和请求类型
+     *
+     * @param method
+     * @param methodInfo
+     */
     private void extractUrlAndMethod(Method method, MethodInfo methodInfo) {
         Annotation[] annotations = method.getAnnotations();
         for (Annotation annotation : annotations) {
@@ -125,6 +137,12 @@ public class JDKProxyCreator implements ProxyCreator {
         }
     }
 
+    /**
+     * 获取服务信息
+     *
+     * @param type
+     * @return
+     */
     private ServerInfo extractServerInfo(Class<?> type) {
         ServerInfo serverInfo = new ServerInfo();
         ApiServer anno = type.getAnnotation(ApiServer.class);
